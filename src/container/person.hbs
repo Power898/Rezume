@@ -76,12 +76,16 @@
                               <li>{{name}}</li>
                               <li>{{title}}</li>
                               <li>{{email}}</li>
-                              <li>{{skills}}</li>
+                              {{#each skills}}
+                                <li>{{this}}</li>
+                              {{/each}}
                               <ul>
                                 {{#each projects}}
                                   <li>{{name}}</li>
                                   <li>{{description}}</li>
-                                  <li>{{technologies}}</li>
+                                  {{#each technologies}}
+                                    <li>{{this}}</li>
+                                  {{/each}}
                                   <ul>
                                     {{#each team_members}}
                                       <li>
