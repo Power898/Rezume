@@ -1,0 +1,90 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <div>
+        <h1>{{name}}
+          <span class='badge bg-secondary'>New</span></h1>
+        <br />
+        <h3>Description:</h3>
+        <p>{{description}}</p>
+        <br />
+        <h3>History:</h3>
+        {{#with history}}
+          <p><em>year:</em>
+            {{year}}
+            <em>founder:</em>
+            {{founder}}</p>
+        {{/with}}
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <h4>types:</h4>
+        <ul>
+          {{#each types}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <br />
+        <h4>syntax:</h4>
+        {{#with syntax}}
+          <ul>
+            <li><em>variables:</em> {{variables}}</li>
+            <li><em>functions:</em> {{functions}}</li>
+            <li><em>conditionals:</em> {{conditionals}}</li>
+            <li><em>loops:</em> {{loops}}</li>
+            <li><em>classes:</em> {{classes}}</li>
+          </ul>
+        {{/with}}
+        <br />
+        <h4>features:</h4>
+        <ul>
+          {{#each features}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <br />
+        <h4>libraries:</h4>
+        <ul>
+          {{#each libraries}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <br />
+        <h4>tools:</h4>
+        <ul>
+          {{#each tools}}
+            <li>{{this}}</li>
+          {{/each}}
+        </ul>
+        <br />
+        <h4>community:</h4>
+        <ul>
+          {{#each community}}
+            <li>
+              <em>name:</em>
+              {{name}}
+              <em>type:</em>
+              {{type}}
+              <button
+                type='button'
+                class='btn btn-outline-info'
+              >Info</button>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
