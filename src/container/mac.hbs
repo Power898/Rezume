@@ -1,0 +1,125 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <h1>Mac</h1>
+      <br />
+      <h3>Apple MacBook Pro</h3>
+      <div>
+        <ol>
+          <li><em>name:</em> {{name}}</li>
+          <li><em>description:</em> {{description}}</li>
+          <li><em>price:</em> {{price}}</li>
+          <li><em>category:</em> {{category}}</li>
+        </ol>
+      </div>
+      <div>
+        <h4>features</h4>
+        <ul>
+          {{#with features}}
+            <li>
+              <em>processor:</em>
+              {{#with processor}}
+                {{brand}},
+                {{model}},
+                {{speed}},
+                {{cores}},
+                {{cache}}
+              {{/with}}
+            </li>
+            <li>
+              <em>memory:</em>
+              {{#with memory}}
+                {{type}},
+                {{size}},
+                {{speed}}
+              {{/with}}
+            </li>
+            <li>
+              <em>storage:</em>
+              {{#with storage}}
+                {{type}},
+                {{size}}
+              {{/with}}
+            </li>
+            <li>
+              <em>display:</em>
+              {{#with display}}
+                {{size}},
+                {{resolution}},
+                {{technology}},
+                {{color_space}},
+                {{brightness}},
+                {{refresh_rate}}
+              {{/with}}
+            </li>
+            <li>
+              <em>graphics:</em>
+              {{#with graphics}}
+                {{brand}},
+                {{model}},
+                {{memory}}
+              {{/with}}
+            </li>
+            <li>
+              <em>ports:</em>
+              {{#each ports}}
+                type:
+                {{type}}, count:
+                {{count}},
+                <ul>
+                  {{#each features}}
+                    <li>features:<p><a
+                          href='#'
+                          class='link-primary'
+                        >{{this}}</a></p>
+                    </li>
+                  {{/each}}
+                </ul>
+              {{/each}}
+            </li>
+            <li>
+              <em>battery:</em>
+              {{#with battery}}
+                type:
+                {{type}}, capacity:
+                {{capacity}}, life:
+                {{life}}
+              {{/with}}
+            </li>
+            <li>weight: {{weight}}</li>
+            <li>
+              <em>dimensions:</em>
+              {{#with dimensions}}
+                height:
+                {{height}}, width:
+                {{width}}, depth:
+                {{depth}}
+              {{/with}}
+            </li>
+            <li>
+              <em>operating system:</em>
+              {{operating_system}}</li>
+            <li>
+              <em>accessories:</em>
+              {{#each accessories}}
+                name:
+                {{name}}, price:
+                {{price}}
+              {{/each}}
+            </li>
+          {{/with}}
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
