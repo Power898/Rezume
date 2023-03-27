@@ -1,0 +1,56 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <main>
+    <section>
+      <div>
+        <p class='h1'> {{name}}</p>
+        <br />
+        <hr />
+        <ul>
+          <p class='h3'> Users: </p>
+          {{#each users}}
+            <li>id: {{id}}</li>
+            <li>name: {{name}}</li>
+            <li>age: {{age}}</li>
+            <p class='h5'> friends:</p>
+            {{#each friends}}
+              <li> id: {{id}}</li>
+              <li>name: {{name}}</li>
+              <li>age: {{age}}</li>
+              {{#each mutual_friends}}
+                <li> id: {{id}}</li>
+                <li>name: {{name}}</li>
+                <li>gender: {{gender}}</li>
+                <li>age: {{age}}</li>
+              {{/each}}
+              {{#each groups}}
+                <p><a
+                    href='#'
+                    class='link-underline-primary'
+                  >groups:</a></p>
+                <li>id: {{id}}</li>
+                <li>name: {{name}}</li>
+                <li>description: {{description}}</li>
+                {{#each members}}
+                  <li> id: {{id}}</li>
+                  <li>name: {{name}}</li>
+                  <li>gender: {{gender}}</li>
+                  <li>age: {{age}}</li>
+                {{/each}}
+              {{/each}}
+            {{/each}}
+          {{/each}}
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
