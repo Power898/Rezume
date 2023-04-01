@@ -1,0 +1,101 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <div class='text-center'>
+    {{#with page_header}}
+      <br />
+      <p class='h1'>{{title}}</p>
+      <p class='text-uppercase'>{{description}}</p>
+    {{/with}}
+    <hr />
+  </div>
+  <section>
+    <div>
+      {{#with section}}
+        <div class='card'>
+          <div class='card-body'>
+            {{#with about_us}}
+              {{#with title_list}}
+                <h2 class='h2 text-end'>{{main}}</h2>
+                <p class='h2 text-end'>{{sub}}</p>
+              {{/with}}
+              {{#with button}}
+                <button
+                  type='button'
+                  class='btn btn-outline-info'
+                >{{text}}</button>
+              {{/with}}
+            {{/with}}
+          </div>
+        </div>
+        <br>
+        <div class='card'>
+        <div class='card-body'>
+        {{#with advantage}}
+          <h2 class="h2 text-muted">{{title}}</h2>
+          <div class='card'>
+          <div class='card-body'>
+          {{#with efficiency}}
+            <h2 class="h2 text-muted">{{title}}</h2>
+            <p>{{sub_title}}</p>
+            <p>{{description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{button}}</button>
+          {{/with}}
+          </div>
+          </div>
+        </div>
+        </div>
+        <br>
+        <div class='card' >
+        <div class='card-body'>
+          {{#with innovation}}
+            <h2 class="h2 text-muted text-center">{{title}}</h2>
+            <p class="text-center">{{sub_title}}</p>
+            <p class="text-center">{{description}}</p>
+            <button type="button" class="btn btn-outline-warning">{{button}}</button>
+          {{/with}}
+        </div>
+        </div>
+          <br />
+          <div class="card">
+          <div class="card-body">
+          {{#with collaboration}}
+            <h2 class="h2 text-muted text-end">{{title}}</h2>
+            <p class="text-end">{{sub_title}}</p>
+            <p class="text-end">{{description}}</p>
+          <button type="button" class="btn btn-outline-warning">{{button}}</button>
+          {{/with}}
+          </div>
+          </div>
+        {{/with}}
+        <br />
+        <div class="card">
+        <div class="card-body">
+        {{#with agreement}}
+          <h2 class="h2">{{title}}</h2>
+          <div class="card">
+          <div class="card-body">
+          {{#with info}}
+            <h2 class="h3">{{sub_title}}</h2>
+            {{#with detail}}
+              <p>{{text}}</p>
+              <button type="button" class="btn btn-success">{{button}}</button>
+            {{/with}}
+          {{/with}}
+          </div>
+          </div>
+        {{/with}}
+        </div>
+        </div>
+      {{/with}}
+    </div>
+  </section>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
