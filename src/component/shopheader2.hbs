@@ -1,0 +1,21 @@
+<section>
+  {{#with navigation}}
+    <div class='row'>
+      <div class='col-6'>
+        <ul class='nav'>
+          {{#each links}}
+            <li class='nav-item'>
+              <a
+                class='nav-link'
+                href='{{href}}'
+              >{{text}}</a>
+            </li>
+          {{/each}}
+          <li class='nav-item'>
+            <a class='nav-link disabled'>Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {{/with}}
+</section>

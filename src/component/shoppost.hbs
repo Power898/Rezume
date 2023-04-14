@@ -1,0 +1,30 @@
+<section>
+  <div>
+    {{#with newsOtherBlock}}
+      <h2 class='h2 text-center'>{{title}}</h2>
+      <br />
+      <div class='row'>
+        {{#each cards}}
+          <div class='col-3'>
+            <div
+              class='card text-bg-dark mb-3'
+              style='max-width: 18rem;'
+            >
+              <div class='card-header'>{{title}}
+                {{#unless isTop}}<span
+                    class='badge text-bg-danger'
+                  >Топ</span>{{/unless}}
+                {{#unless idNew}}<span
+                    class='badge text-bg-success'
+                  >Нова</span>{{/unless}}
+              </div>
+              <div class='card-body'>
+                <p class='card-text'>{{description}}</p>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    {{/with}}
+  </div>
+</section>
