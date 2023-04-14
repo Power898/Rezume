@@ -1,0 +1,135 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+  <hr class='my-0' />
+  <section>
+    <nav aria-label='breadcrumb'>
+      <ol class='breadcrumb ms-0'>
+        <li class='breadcrumb-item ms-0'><a
+            href='{{breadcrumb.0.url}}'
+          >{{breadcrumb.0.name}}</a></li>
+        <li class='breadcrumb-item'><a
+            href='{{breadcrumb.1.url}}'
+          >{{breadcrumb.1.name}}</a></li>
+        <li class='breadcrumb-item'><a
+            href='{{breadcrumb.2.url}}'
+          >{{breadcrumb.2.name}}</a></li>
+        <li
+          class='breadcrumb-item active'
+          aria-current='page'
+        >{{breadcrumb.3.name}}</li>
+      </ol>
+    </nav>
+  </section>
+
+  <section>
+    <div class='row'>
+      {{#with productData}}
+        <div class='col-7'>
+          <img src='{{img}}' />
+          <div class='card mb-4 mt-4' style='width: 25rem;'>
+            <div class='card-body'>
+              <h5 class='card-title'>{{info.title}}</h5>
+              <p class='card-text'>{{info.about}}</p>
+              <h4>{{info.price}}
+                <br>
+                {{#each info.category}}
+                {{#if isHot}}
+                <span class="badge text-bg-warning">{{name}}</span>
+                {{/if}}
+                {{#if isNew}}
+                <span class="badge text-bg-primary">{{name}}</span>
+                {{/if}}
+                {{#if isBonus}}
+                <span class="badge text-bg-info">{{name}}</span>
+                {{/if}}
+                {{/each}}
+              </h4>
+            </div>
+          </div>
+        </div>
+          <br>
+          <div class="col-5">
+            <table class="table">
+           <thead>
+              <tr>
+                <th scope="col">{{item.head.[0]}}</th>
+                <th scope="col">{{item.head.[1]}}</th>
+                <th scope="col">{{item.head.[2]}}</th>
+                <th scope="col">{{item.head.[3]}}</th>
+             </tr>
+            </thead>
+           <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>{{item.body.[0].[0]}}</td>
+              <td>{{item.body.[0].[1]}}</td>
+              <td>{{item.body.[0].[2]}}</td>
+      
+            </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>{{item.body.[1].[0]}}</td>
+                <td>{{item.body.[1].[1]}}</td>
+                <td>{{item.body.[1].[2]}}</td>
+             </tr>
+             <tr>
+              <th scope="row">3</th>
+              <td>{{item.body.[2].[0]}}</td>
+              <td>{{item.body.[2].[1]}}</td>
+              <td>{{item.body.[2].[2]}}</td>
+             </tr>
+           </tbody>
+          </table>
+          <div class="card mt-2" style="width: 17rem;">
+  <div class="card-header">
+    {{param.title}}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{param.list.[0]}}</li>
+    <li class="list-group-item">{{param.list.[1]}}</li>
+    <li class="list-group-item">{{param.list.[2]}}</li>
+  </ul>
+</div>
+<div class="alert alert-danger mt-3 ms-2" role="alert">
+  {{#with alert}}
+  {{#if isError}}{{text}}{{/if}}
+  {{/with}}
+</div>
+          </div>
+          <div class='col-12'>
+            <div class='card' style='width: 43rem;'>
+                <div class='card-body'>
+                  {{#each actionList}}
+                  {{#if isWarning}}
+                    <button type="button" class="btn btn-warning mx-2">{{name}}</button>
+                    {{/if}}
+                    {{#if isError}}
+             <button type="button" class="btn btn-outline-danger mx-2">{{name}}</button>
+                     {{/if}}
+                     {{#if isSuccess}}
+             <button type="button" class="btn btn-success mx-2">{{name}}</button>
+                      {{/if}}
+                      {{#if isGood}}
+             <button type="button" class="btn btn-outline-success mx-2">{{name}}</button>
+                      {{/if}}
+             {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+      {{/with}}
+    </div>
+  </section>
+  <br>
+  <hr>
+  <br>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
