@@ -1,0 +1,20 @@
+<section>
+  {{#with subscribe}}
+    <div class='card text-bg-dark mb-3'>
+      <div class='card-body'>
+        <h5 class='card-title'>{{header}}</h5>
+        <p class='card-text'>{{description}}</p>
+        <br />
+        {{#each buttons}}<a
+            href='{{link}}'
+            class='btn btn-primary mb-2'
+            tabindex='-1'
+            role='button'
+            aria-disabled='true'
+          >{{text}}</a>
+          <br />
+        {{/each}}
+      </div>
+    </div>{{/with}}
+</section>
+<hr class='mt-0' />

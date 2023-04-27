@@ -1,0 +1,104 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+
+  <section>
+    {{#with header}}
+      <h2 class='mb-3'>{{title}}</h2>
+      {{#with button}}
+        <a
+          href='{{link}}'
+          class='btn btn-outline-secondary mb-3'
+          tabindex='-1'
+          role='button'
+          aria-disabled='true'
+        >{{text}}</a>
+      {{/with}}
+    {{/with}}
+  </section>
+  <hr />
+  <section>
+    {{#each goodsBlock}}<div class='card mb-3'>
+        <div class='row g-0'>
+          <div class='col-md-2'>
+            <img
+              src='{{image}}'
+              class='img-fluid rounded-start'
+              alt='...'
+            />
+          </div>
+          <div class='col-md-3'>
+            <div class='card-body'>
+              <h5 class='card-title'>{{name}}</h5>
+              <p class='card-text'>{{description}}</p>
+            </div>
+          </div>
+          <div class='col-md-2'>
+            <div class='card-body'>
+              <br />
+              <p class='card-text'><strong
+                >{{price.title}}:</strong>
+                <br />
+                <strong>{{price.value}}</strong>
+              </p>
+            </div>
+          </div>
+          <div class='col-md-2'>
+            <div class='card-body'>
+              <br />
+              <p class='card-text'>
+                <strong>{{amount}}</strong>
+              </p>
+            </div>
+          </div>
+          <div class='col-md-3'>
+            <div class='card-body'>
+              {{#each buttons}}
+                {{#if isPrimary}}<button
+                    type='button'
+                    class='btn btn-primary'
+                  >{{text}}</button>{{/if}}
+                {{#if isDanger}}<button
+                    type='button'
+                    class='btn btn-outline-danger mt-3'
+                  >{{text}}</button>{{/if}}
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>{{/each}}
+  </section>
+  <hr class='mt-0' />
+  <section>
+    {{#with total}}
+      <h3>{{title}}</h3>
+      <h2>{{amount}}</h2>
+      <p>{{delivery}}</p>
+      {{#each buttons}}
+        {{#if isSuccess}}<a
+            href='{{link}}'
+            class='btn btn-success'
+            tabindex='-1'
+            role='button'
+            aria-disabled='true'
+          >{{text}}</a>{{/if}}
+        <br />
+        {{#if isOutline}}<a
+            href='{{link}}'
+            class='btn btn-outline-success'
+            tabindex='-1'
+            role='button'
+            aria-disabled='true'
+          >{{text}}</a>{{/if}}
+      {{/each}}
+    {{/with}}
+  </section>
+  <hr />
+</div>
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}

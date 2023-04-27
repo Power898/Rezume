@@ -1,0 +1,36 @@
+<div>
+  {{#with goodsOtherBlock}}
+    <h2 class='h2 text-center'>{{title}}</h2>
+    <br />
+    <div class='row gx-2 gy-2'>
+      {{#each cards}}
+        <div class='col-4'>
+          <div class='card ms-3' style='width: 13rem;'>
+            <img
+              src='{{image}}'
+              class='card-img-top'
+              alt='...'
+            />
+            <div class='card-body'>
+              <h5 class='card-title'>{{title}}
+                {{#unless isHot}}
+                  <span
+                    class='badge text-bg-warning'
+                  >HOT!</span>
+                {{/unless}}
+                {{#unless idNew}}
+                  <span
+                    class='badge text-bg-primary'
+                  >New</span>
+                {{/unless}}
+              </h5>
+              <p class='card-text'>{{description}}</p>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+</div>
+<br />
+<hr class='m-3' />
