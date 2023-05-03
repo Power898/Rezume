@@ -1,0 +1,126 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<section>
+  {{#with formBlock}}
+    <div class='row'>
+      <div class='col-8'>
+        <h2 class='mb-3'>{{header}}</h2>
+        {{#with rating}}
+          {{title}}:
+          {{value}}
+        {{/with}}
+        <br />
+        <br />
+        {{#with actionBlock}}
+          <ul class='nav nav-tabs'>
+            {{#each tabs}}
+              {{#if isActive}}
+                <li class='nav-item'>
+                  <a
+                    class='nav-link active'
+                    aria-current='page'
+                    href='#'
+                  ><strong>{{text}}</strong></a>
+                </li>
+              {{else}}
+                <li class='nav-item'>
+                  <a class='nav-link' href='#'>{{text}}</a>
+                </li>
+              {{/if}}
+            {{/each}}
+          </ul>
+          <hr class='my-5' />
+          <div class='card'>
+            {{#with report}}
+              <div class='card-body'>
+                <p>{{title}}</p>
+                {{#with button}}<a
+                    class='btn btn-secondary'
+                    href='{{link}}'
+                    role='button'
+                  >{{text}}</a>{{/with}}
+              </div>
+            {{/with}}
+          </div>
+          <hr class='my-5' />
+        {{/with}}
+      </div>
+
+      <div class='col-4'>
+        {{#with goodsInfo}}
+          <div class='card'>
+            <div class='card-body'>
+              <div class='col-8'>
+                <img
+                  src='{{photo}}'
+                  class='card-img-top'
+                  alt='...'
+                />
+              </div>
+              <p class='mt-4 mb-1'><strong>{{name}}</strong></p>
+            </div>
+          </div>
+          <br />
+          <div class='card'>
+            <div class='card-body'>
+              <p><strong>{{price}}</strong><p>
+                {{#if inMarket}}<p class="my-2">Є в наявності</p>{{/if}}
+                {{#each buttons}}
+                {{#if isPrimary}}<a
+                class='btn btn-primary mb-2'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>{{/if}}
+                {{#if isSecondary}}<a
+                class='btn btn-secondary'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>{{/if}}
+                {{/each}}
+            </div>
+          </div>
+          <br>
+          <div class="card">
+            <div class="card-body">
+              {{#with seller}}
+              <p class="mb-1">{{title}}: <strong>{{value}}</strong></p>
+              {{/with}}
+            </div>
+          </div>
+        {{/with}}
+      </div>
+      <div class='col-8'>
+        {{#with feedbackBlock}}
+          <h3 class='mb-5'>{{title}}</h3>
+          {{#each buttons}}
+            {{#if isWarning}}<a
+                class='btn btn-warning'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>{{/if}}
+            {{#if isSuccess}}<a
+                class='btn btn-success'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>{{/if}}
+            {{#if isDanger}}<a
+                class='btn btn-danger'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>{{/if}}
+          {{/each}}
+        {{/with}}
+      </div>
+    </div>
+  {{/with}}
+</section>
+<hr>
+
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
