@@ -1,0 +1,30 @@
+<div class='row g-1'>
+  {{#each itemList}}
+    <div class='col-2'>
+      {{number}}
+      <strong>{{status}}</strong>
+    </div>
+    <div class='col-2'>
+      {{#with amount}}
+        {{title}}
+        <br />
+        <strong>{{value}}</strong>
+      {{/with}}
+    </div>
+    <div class='col-7'>
+      {{#each images}}
+        <img src='{{this}}' />
+      {{/each}}
+    </div>
+    <div class='col-1'>
+      {{#with button}}
+        {{#if isPrimary}}<a
+            class='btn btn-primary'
+            href='{{link}}'
+            role='button'
+          >{{text}}</a>{{/if}}
+      {{/with}}
+    </div>
+    <hr />
+  {{/each}}
+</div>
