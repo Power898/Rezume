@@ -3312,7 +3312,12 @@ router.get('/shopreview', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
-    // layout: 'shop',
+    layout: 'shop6',
+
+    page: {
+      title: 'Resume/shopreview',
+    },
+
     navigation: {
       links: [
         {
