@@ -8,7 +8,6 @@
     <section>
       <div>
         <p class='h1'> {{name}}</p>
-        <br />
         <hr />
         <ul>
           <p class='h3'> Users: </p>
@@ -16,7 +15,7 @@
             <li>id: {{id}}</li>
             <li>name: {{name}}</li>
             <li>age: {{age}}</li>
-            <p class='h5'> friends:</p>
+            <p class='h5 mt-3'> friends:</p>
             {{#each friends}}
               <li> id: {{id}}</li>
               <li>name: {{name}}</li>
@@ -28,7 +27,7 @@
                 <li>age: {{age}}</li>
               {{/each}}
               {{#each groups}}
-                <p><a
+                <p class='mt-3'><a
                     href='#'
                     class='link-underline-primary'
                   >groups:</a></p>

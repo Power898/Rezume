@@ -6,8 +6,7 @@
 <div>
     <main>
       <section>
-        <h1>Car</h1>
-        <br>
+        <h1 class="mb-4">Car</h1>
         <h3>Toyota Camry</h3>
         <div>
           <ol>
@@ -21,7 +20,6 @@
              <li>
                <h5>interior</h5>
                <em>seats:</em>
-               <br>
                {{#with features}}
                  {{#with interior}}
                   <ul>
@@ -64,8 +62,7 @@
                  <li>
                    {{/with}}
                    <h5>exterior</h5>
-                   <em>wheels:</em>
-                   <br>        
+                   <em class="ms-4">wheels:</em>      
                      {{#with exterior}}
                      <ul>
                         {{#with wheels}}
@@ -91,7 +88,6 @@
                      <li>
                        <h5>safety</h5>
                        <em>airbags:</em>
-                       <br>
                        {{#with safety}}
                           <ul>
                            {{#with airbags}}
@@ -102,7 +98,6 @@
                            {{/with}}
                           </ul>
                         <em>assistance:</em>
-                       <br>  
                           <ul>
                             {{#with assistance}}
                              <li>{{#if blind_spot_monitoring}}(blind_spot_monitoring){{/if}}</li>
