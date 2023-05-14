@@ -46,7 +46,7 @@
       {{#with city}}
           <h2 class='h2'>{{title}}</h2>
           <br>
-          <div class="row">
+          <div class="row g-1">
              {{#each cards}}
                <div class="col-6">
                  <div class="card">
@@ -115,7 +115,7 @@
     {{#with gallery}}
          <h2 class='h2'>{{title}}</h2>
          <br>
-  <div class="row"> 
+  <div class="row g-1"> 
     <div class="col-5">     
          <div class="card" style="width: 16rem;">
   <div class="card-header">
@@ -244,7 +244,7 @@
       <div class="col-4">
       <div class="nav flex-column">
          {{#each socialMedia}}
-              <div class="nav item"><a class="btn btn-outline-dark" href="{{link}}" role="button">{{name}}</a></div>
+              <div class="nav item"><a class="btn btn-outline-dark mb-2" href="{{link}}" role="button">{{name}}</a></div>
          {{/each}}
       </div>
       </div>
@@ -252,7 +252,7 @@
       <div class="col-4">
       <div class="nav flex-column">
          {{#each partners}}
-             <div class="nav-item" ><a class="btn btn-outline-info" href="{{link}}" role="button">{{name}}</a></div>
+             <div class="nav-item" ><a class="btn btn-outline-info mb-2" href="{{link}}" role="button">{{name}}</a></div>
          {{/each}}
         </div>
       </div>
